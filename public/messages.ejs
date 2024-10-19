@@ -1,0 +1,52 @@
+<div class="messages-body">
+  <section class="message-container">
+    <h1 class="page-title">All Contact Messages</h1>
+
+    <div class="messages-list">
+      <% messages.forEach((message, index) => { %>
+
+      <div class="message-card">
+        <h3><%= message.first_name %> <%= message.last_name %></h3>
+        <div class="action-icons">
+          <a href="/contact-us/<%= message.user_id %>" title="Update"> <!--Calling route according to user_id-->
+            <i class="fa fa-edit fa-lg"></i>
+          </a>
+          <form
+            action="/messages/delete/<%= message.user_id %>"
+            method="POST"
+            class="delete-form"
+            onsubmit="return confirm('Are you sure you want to delete this message')"
+          >
+            <button type="submit" title="Delete">
+              <i class="fa fa-trash fa-lg"></i>
+            </button>
+          </form>
+        </div>
+        <p class="email"><strong>Email:</strong> <%= message.email %></p>
+        <p class="message-preview">
+          <strong>Message #<%= index + 1 %>:</strong>
+          <%= message.feedback_message.slice(0,10) %>...
+        </p>
+        <button
+          class="see-more-button"
+          data-message="<%= message.feedback_message %>"
+          data-id="<%= index + 1 %>"
+        >
+          See More
+        </button>
+      </div>
+      <% }) %>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="message-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-message"></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="./scripts/messages.js"></script>
+</div>

@@ -1,0 +1,103 @@
+.form-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1f1f1f;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ffffff;
+  flex-direction: column;
+}
+
+.contact-container {
+  background-color: #2a2a2a;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+.contact-title {
+  font-size: 2.2rem;
+  color: #ff4655;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Form Styles */
+.contact-form div {
+  margin-bottom: 20px;
+  width: 60vw;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #bfbfbf;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444444;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+  border-color: #ff4655;
+  outline: none;
+  background-color: #292929;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #ff4655;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-weight: bold;
+  margin-left: 13px;
+}
+
+.submit-button:hover {
+  background-color: #e04046;
+}
+
+.checkbox-div {
+  display: flex;
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-checkbox {
+  margin: 10px;
+  transform: scale(1.5);
+  vertical-align: middle;
+}

@@ -1,0 +1,21 @@
+<div class="thankyou-body">
+  <div class="thankyou-container">
+    <h1 class="thankyou-header">
+      Thank You, <%= status!=='deleted' ? fullname : ''%> for Contacting Us! <!--if status is deleted then no fullname-->
+    </h1>
+    <% if (status === 'added') { %>
+    <p class="thankyou-message">
+      Your message associated with <%= email %> has been received. We will get
+      back to you shortly.
+    </p>
+    <% } else if (status === 'updated') { %>
+    <p class="thankyou-message">
+      Your message associated with <%= email %> has been <b>updated</b>. We will
+      get back to you shortly.
+    </p>
+    <% } else if (status==='deleted') {%>
+    <p class="thankyou-message">Your message has been deleted.</p>
+    <% } %>
+    <a href="/" class="back-home-button">Go to Home</a>
+  </div>
+</div>

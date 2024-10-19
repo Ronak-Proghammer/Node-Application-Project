@@ -1,0 +1,122 @@
+<section class="form-container">
+  <h1 class="contact-title">Contact Us</h1>
+
+  <form action="/contact" method="POST" class="contact-form">
+    <div>
+      <label for="first_name">First Name:</label>
+      <input
+        type="text"
+        id="first_name"
+        name="first_name"
+        required
+        placeholder="Enter your first name"
+        class="form-input"
+        value="<%= userInfo ? userInfo.first_name : '' %>"
+      />
+    </div>
+
+    <div>
+      <label for="last_name">Last Name:</label>
+      <input
+        type="text"
+        id="last_name"
+        name="last_name"
+        placeholder="Enter your last name"
+        required
+        class="form-input"
+        value="<%= userInfo ? userInfo.last_name : '' %>"
+      />
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter a valid email address"
+        required
+        class="form-input"
+        value="<%= userInfo ? userInfo.email : '' %>"
+      />
+    </div>
+
+    <div>
+      <label for="phone_number">Phone Number:</label>
+      <input
+        type="tel"
+        id="phone_number"
+        name="phone_number"
+        required
+        class="form-input"
+        placeholder="Enter your 10 digit phone number eg. 8888888888"
+        maxlength="10"
+        pattern="[0-9]{10}"
+        value="<%= userInfo ? userInfo.phone_number : '' %>"
+      />
+    </div>
+
+    <div>
+      <label for="city">City:</label>
+      <input
+        type="text"
+        id="city"
+        name="city"
+        required
+        class="form-input"
+        value="<%= userInfo ? userInfo.city : '' %>"
+      />
+    </div>
+
+    <div>
+      <label for="province">Province:</label>
+      <input
+        type="text"
+        id="province"
+        name="province"
+        required
+        class="form-input"
+        value="<%= userInfo ? userInfo.province : '' %>"
+      />
+    </div>
+
+    <div>
+      <label for="postal_code">Postal Code:</label>
+      <input
+        type="text"
+        id="postal_code"
+        name="postal_code"
+        required
+        class="form-input"
+        value="<%= userInfo ? userInfo.postal_code : '' %>"
+      />
+    </div>
+
+    <div>
+      <label for="feedback_message">Feedback Message:</label>
+      <textarea
+        id="feedback_message"
+        name="feedback_message"
+        rows="4"
+        required
+        class="form-input"
+      >
+<%= userInfo ? userInfo.feedback_message : '' %></textarea
+      >
+    </div>
+
+    <div class="checkbox-div">
+      <label for="update_info">Update Contact Info:</label>
+      <input type="checkbox" id="update_info" name="update_info"
+      class="form-checkbox" <%= userInfo && userInfo.update_info ? 'checked' :
+      '' %> />
+      <label for="update_info"
+        >Check this box if you want to update your contact information.</label
+      >
+    </div>
+
+    <div>
+      <button type="submit" class="submit-button">Send Message</button>
+    </div>
+  </form>
+</section>
